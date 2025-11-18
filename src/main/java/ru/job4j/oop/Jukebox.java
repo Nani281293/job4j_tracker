@@ -1,0 +1,26 @@
+package ru.job4j.oop;
+
+public class Jukebox {
+
+    public void music(int position) {
+        if (position == 1) {
+            System.out.println("Пусть бегут неуклюже");
+        } else if (position == 2) {
+            System.out.println("Спокойной ночи");
+        } else {
+            System.out.println("Песня не найдена");
+        }
+    }
+
+    public static void main(String[] args) {
+        Jukebox ussr = new Jukebox();
+        int position = 1;
+        ussr.music(position);
+        position = 2;
+        ussr.music(position);
+        position = 3;
+        ussr.music(position);
+        position = 5;
+        ussr.music(position);
+    }
+}
