@@ -17,11 +17,7 @@ public class Calculator {
     }
 
     public int sumAllOperation(int value) {
-        int sumResult = sum(value);
-        int multiplyResult = multiply(value);
-        int munusReult = minus(value);
-        int divideResult = divide(value);
-        return sumResult + multiplyResult + munusReult + divideResult;
+        return sum(value) + multiply(value) + minus(value) + divide(value);
     }
 
     public int multiply(int a) {
