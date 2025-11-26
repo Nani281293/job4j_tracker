@@ -26,7 +26,7 @@ public class Library {
         System.out.println("Добавляем цикл с выводом книг с именем Clean code");
         for (int index = 0; index < books.length; index++) {
             Book book = books[index];
-            if (book.getName() == "Clean code") {
+            if ("Clean code".equals(book.getName())) {
                 System.out.println(book.getName() + " - " + book.getPage());
             }
         }
