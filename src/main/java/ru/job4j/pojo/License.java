@@ -6,7 +6,7 @@ public class License {
     private String owner;
     private String model;
     private String code;
-    private LocalDate created;
+    private LocalDate created = LocalDate.now();
 
     public String getModel() {
         return model;
@@ -34,9 +34,5 @@ public class License {
 
     public LocalDate getCreated() {
         return created;
-    }
-
-    public void setCreated(int year, int month, int dayOfMonth) {
-        this.created = LocalDate.of(year, month, dayOfMonth);
     }
 }
