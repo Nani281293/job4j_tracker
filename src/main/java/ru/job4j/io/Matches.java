@@ -7,32 +7,25 @@ public class Matches {
         Scanner input = new Scanner(System.in);
         System.out.println("Игра 11.");
         boolean turn = true;
-        boolean exit = true;
         int count = 11;
-        while (count > 0) {
+        do {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            while (exit) {
-                if (matches > 0 && matches < 4 && matches <= count) {
-                    count -= matches;
-                    System.out.println(player + " выбрал: " + matches + " спички");
-                    System.out.println("На столе осталось: " + count + " спичек\n");
-                    if (count == 0) {
-                        System.out.println("Выиграл: " + player);
-                        exit = !exit;
-                    } else {
-                        turn = !turn;
-                    }
-                    break;
+            if (matches > 0 && matches < 4 && matches <= count) {
+                count -= matches;
+                System.out.println(player + " выбрал: " + matches + " спички");
+                System.out.println("На столе осталось: " + count + " спичек\n");
+                if (count == 0) {
+                    System.out.println("Выиграл: " + player);
                 } else {
-                    System.out.println("Количество спичек должно быть от 1 до 3 "
-                            + "и не более остатка: " + count);
-                    System.out.println(player + " введите число от 1 до 3:");
-                    matches = Integer.parseInt(input.nextLine());
+                    turn = !turn;
                 }
+            } else {
+                System.out.println("Количество спичек должно быть от 1 до 3 "
+                        + "и не более остатка: " + count);
             }
-        }
+        } while (count > 0);
     }
 }
 
