@@ -4,8 +4,11 @@ public interface Vehicle extends Fuel {
     int WHEELS = 4;
 
     void changeGear();
+
     void accelerate();
+
     void steer();
+
     void brake();
 
     static void getDragCoefficient() {
