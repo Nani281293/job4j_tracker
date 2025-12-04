@@ -21,6 +21,7 @@ public class StartUI {
                 findItemByName(input, tracker);
             } else if (select == 6) {
                 run = false;
+
             }
         }
     }
