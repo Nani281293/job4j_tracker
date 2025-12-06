@@ -25,7 +25,7 @@ class StartUITest {
     void whenReplaceItem() {
         Output output = new ConsoleOutput();
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("Replaced item")); /* Добавляется в tracker новая заявка */
+        Item item = tracker.add(new Item("Replaced item")); /* ??????????? ? tracker ????? ?????? */
         String replacedName = "New item name";
         Input input = new MockInput(
                 new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
@@ -66,9 +66,9 @@ class StartUITest {
         };
         new StartUI(output).init(input, tracker, actions);
         assertThat(output.toString()).isEqualTo(
-                "Меню:" + System.lineSeparator()
-                        + "0. Завершить программу" + System.lineSeparator()
-                        + "=== Завершение программы ===" + System.lineSeparator()
+                "РњРµРЅСЋ:" + System.lineSeparator()
+                        + "0. Р—Р°РІРµСЂС€РёС‚СЊ РїСЂРѕРіСЂР°РјРјСѓ" + System.lineSeparator()
+                        + "=== Р—Р°РІРµСЂС€РµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹ ===" + System.lineSeparator()
         );
     }
 }
