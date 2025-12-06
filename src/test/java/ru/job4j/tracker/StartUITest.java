@@ -25,7 +25,7 @@ class StartUITest {
     void whenReplaceItem() {
         Output output = new ConsoleOutput();
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("Replaced item")); /* ??????????? ? tracker ????? ?????? */
+        Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input input = new MockInput(
                 new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
