@@ -1,13 +1,11 @@
 package ru.job4j.ex;
 
-import java.util.concurrent.atomic.AtomicStampedReference;
-
 public class UserStore {
     public static User findUser(User[] users, String login)
             throws UserNotFoundException {
-        for (int index = 0; index < users.length; index++) {
-            if (users[index].getUsername().equals(login)) {
-                return users[index];
+        for (User user : users) {
+            if (user.getUsername().equals(login)) {
+                return user;
             }
         }
         throw new UserNotFoundException("Имя пользователя не найдено");
@@ -15,15 +13,15 @@ public class UserStore {
 
     public static boolean validate(User user)
             throws UserInvalidException {
-        if (user.getUsername().length() > 3 && user.isValid()) {
-            return true;
+        if (!user.isValid() || user.getUsername().length() < 3) {
+            throw new UserInvalidException("Пользователь не валидный");
         }
-        throw new UserInvalidException("Пользователь не валидный");
+        return true;
     }
 
     public static void main(String[] args) {
         User[] users = {
-                new User("Petr Arsentev", true)
+                new User("Petr Arsentev", false)
         };
         try {
             User user = findUser(users, "Petr Arsentev");
